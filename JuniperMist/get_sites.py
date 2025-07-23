@@ -5,10 +5,10 @@ import json
 
 # Load API token from .env
 load_dotenv()
-API_TOKEN = os.getenv("MIST_API_TOKEN")
+API_TOKEN = os.getenv("API_TOKEN")
 
 if not API_TOKEN:
-    raise ValueError("Missing MIST_API_TOKEN in .env file")
+    raise ValueError("Missing API_TOKEN in .env file")
 
 # Set headers
 headers = {

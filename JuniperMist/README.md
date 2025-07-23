@@ -31,9 +31,6 @@ Create a `.env` file in the JuniperMist directory with the following variables:
 # Required for all scripts
 API_TOKEN=your_mist_api_token_here
 ORG_ID=your_organization_id_here
-
-# Alternative token name used by get_sites.py
-MIST_API_TOKEN=your_mist_api_token_here
 ```
 
 ### Getting Your API Token
@@ -60,7 +57,7 @@ python get_sites.py
 **Output:** JSON formatted organization data including org ID, name, and other details.
 
 **Environment Variables:**
-- `MIST_API_TOKEN` - Your Mist API token
+- `API_TOKEN` - Your Mist API token
 
 ### `check.py`
 **Purpose:** Lists all sites within your organization with their details.

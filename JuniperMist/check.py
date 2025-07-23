@@ -9,7 +9,7 @@ API_TOKEN = os.getenv("API_TOKEN")
 ORG_ID = os.getenv("ORG_ID")
 
 if not API_TOKEN:
-    raise ValueError("Missing MIST_API_TOKEN in .env file")
+    raise ValueError("Missing API_TOKEN in .env file")
 
 # Set headers
 headers = {
