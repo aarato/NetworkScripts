@@ -10,11 +10,15 @@ This directory contains Azure CLI scripts for creating and deleting virtual mach
 
 ## Prerequisites
 
-1. Azure CLI installed and configured
-2. Valid Azure subscription
-3. Existing Azure Resource Group
-4. Appropriate permissions to create/delete resources in the resource group
-5. Logged in to Azure CLI (see Authentication section below)
+1. **Azure CLI installed and configured**
+   - Linux/Ubuntu: `curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`
+   - Or via apt: `sudo apt-get update && sudo apt-get install azure-cli`
+   - Verify installation: `az --version`
+2. **Bash shell** (Linux/macOS/WSL/Git Bash on Windows)
+3. Valid Azure subscription
+4. Existing Azure Resource Group
+5. Appropriate permissions to create/delete resources in the resource group
+6. Logged in to Azure CLI (see Authentication section below)
 
 ## Authentication
 
@@ -104,16 +108,21 @@ For Windows VMs, passwords must meet Azure/Windows complexity requirements:
 - NIC: `VMNAME-nic`
 
 **Supported VM Images:**
-- `Ubuntu2204` - Ubuntu 22.04 LTS (default)
+- `Ubuntu2204` - Ubuntu 22.04 LTS (default, recommended for Linux workloads)
+- `Ubuntu2004` - Ubuntu 20.04 LTS (long-term support)
 - `Win2022Datacenter` - Windows Server 2022
-- `Ubuntu2004` - Ubuntu 20.04 LTS
 - `CentOS85Gen2` - CentOS 8.5
 - `Debian11` - Debian 11
 - `RHEL85Gen2` - Red Hat Enterprise Linux 8.5
 
+**Ubuntu-specific notes:**
+- Ubuntu images come with `cloud-init` pre-configured for automated setup
+- SSH keys are automatically configured for the `ubuntu` user on Ubuntu VMs
+- Package manager: `apt` (use `sudo apt update && sudo apt upgrade` after VM creation)
+
 ### 2. Create VM
 
-**Linux/Git Bash:**
+**Linux/Ubuntu/macOS/WSL/Git Bash:**
 ```bash
 chmod +x create-vm.sh
 ./create-vm.sh
@@ -124,9 +133,11 @@ chmod +x create-vm.sh
 .\create-vm.ps1
 ```
 
+**Note for Ubuntu/Linux users:** The bash scripts are designed to work on all Unix-like systems including Ubuntu 18.04+, Debian, CentOS, and macOS.
+
 ### 3. Delete VM
 
-**Linux/Git Bash:**
+**Linux/Ubuntu/macOS/WSL/Git Bash:**
 ```bash
 chmod +x delete-vm.sh
 ./delete-vm.sh
