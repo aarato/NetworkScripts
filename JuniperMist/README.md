@@ -59,25 +59,12 @@ python get_org_id.py
 **Environment Variables:**
 - `API_TOKEN` - Your Mist API token
 
-### `get_sites.py`
-**Purpose:** Retrieves and displays organization information from the Mist API.
-
-**Usage:**
-```bash
-python get_sites.py
-```
-
-**Output:** JSON formatted organization data including org ID, name, and other details.
-
-**Environment Variables:**
-- `API_TOKEN` - Your Mist API token
-
-### `check.py`
+### `list_sites.py`
 **Purpose:** Lists all sites within your organization with their details.
 
 **Usage:**
 ```bash
-python check.py
+python list_sites.py
 ```
 
 **Output:** Site information including ID, name, and address for each site.
