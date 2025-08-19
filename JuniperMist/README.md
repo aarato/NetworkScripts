@@ -42,9 +42,22 @@ ORG_ID=your_organization_id_here
 
 ### Getting Your Organization ID
 
-Run `get_sites.py` first to retrieve your organization information, or check the Mist portal URL when logged in.
+Use the `get_org_id.py` script to retrieve your organization ID, or check the Mist portal URL when logged in.
 
 ## Scripts
+
+### `get_org_id.py`
+**Purpose:** Retrieves your organization ID from the Mist API using your user privileges.
+
+**Usage:**
+```bash
+python get_org_id.py
+```
+
+**Output:** Your organization ID that can be used in other scripts.
+
+**Environment Variables:**
+- `API_TOKEN` - Your Mist API token
 
 ### `get_sites.py`
 **Purpose:** Retrieves and displays organization information from the Mist API.
